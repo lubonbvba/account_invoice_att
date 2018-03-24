@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <openerp>
+    <data>
+        <record model="ir.ui.view" id="account_invoice_att_company_form">
+            <field name="name">account_invoice_att.company_form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <field name="default_attachments" domain="[('res_id','=',active_id),('res_model','=','res.company')]" widget='many2many_tags' options="{'no_create': True}"/>
+                </field>                   
+            </field>
+        </record>
+    </data>
+</openerp>
